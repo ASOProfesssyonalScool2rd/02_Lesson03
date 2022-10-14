@@ -33,6 +33,11 @@ public class TankScripts : MonoBehaviour
         {
             this.transform.Rotate(0, -RotateSpeed, 0);  
         }
+
+       if (Input.GetKey(KeyCode.S))
+       {
+           this.transform.Translate(0, 0, -ForWedSpeed*Time.deltaTime);  
+       }
        if(Input.GetKey(KeyCode.LeftArrow))
         {
             Upper.transform.Rotate(0, -RotateSpeed, 0);
