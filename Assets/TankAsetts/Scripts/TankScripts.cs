@@ -8,6 +8,10 @@ public class TankScripts : MonoBehaviour
     [SerializeField] private float RotateSpeed = 0.1f; 
      public GameObject Upper = null;
      public GameObject Canon = null;
+
+     public GameObject BallPrefab;
+
+     public float Speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +41,14 @@ public class TankScripts : MonoBehaviour
         {
             Upper.transform.Rotate(0, RotateSpeed, 0);
         }
+
+       if (Input.GetKey(KeyCode.Space))
+       {
+           GameObject ball = (GameObject)Instantiate(BallPrefab, transform.position, Quaternion.identity);
+
+           Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+           ballRigidbody.AddForce(transform.forward* Speed);
+       }
+       
     }
 }
