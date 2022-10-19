@@ -47,7 +47,7 @@ public class TankScripts : MonoBehaviour
             Upper.transform.Rotate(0, RotateSpeed, 0);
         }
 
-       if (Input.GetKey(KeyCode.Space))
+       if (Input.GetKeyDown(KeyCode.Space))
        {
            GameObject ball = (GameObject)Instantiate(BallPrefab, transform.position, Quaternion.identity);
 
